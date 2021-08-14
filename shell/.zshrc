@@ -75,7 +75,7 @@ export PATH=$HOME/.dotfiles/bin:$PATH
 ssh-add -A 2>/dev/null;
 
 # Enable autosuggestions
-source ~/.dotfiles/misc/oh-my-zsh-custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+# source ~/.oh-my-zsh-custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Extra paths
 export PATH="$HOME/.composer/vendor/bin:$PATH"
