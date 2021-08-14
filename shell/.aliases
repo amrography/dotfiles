@@ -1,7 +1,4 @@
 # PHP
-alias pest="vendor/bin/pest"
-alias phpunit="vendor/bin/phpunit"
-alias phpunitw="phpunit-watcher watch"
 alias a="php artisan"
 alias ar="php artisan remote"
 alias c="composer"
@@ -10,9 +7,6 @@ alias cr="composer require"
 alias ci="composer install"
 alias cda="composer dump-autoload -o"
 alias larastan="vendor/bin/phpstan analyse"
-alias hostfile="sudo vi /etc/hosts"
-alias deploy='envoy run deploy'
-alias deploy-code='envoy run deploy-code'
 alias mfs='php artisan migrate:fresh --seed'
 alias nah='git reset --hard;git clean -df'
 alias p="phpunit"
@@ -20,65 +14,22 @@ alias pp="php artisan test --parallel"
 alias pf="phpunit --filter "
 alias d="php artisan dusk"
 alias sshconfig="vi ~/.ssh/config"
-alias copykey='command cat ~/.ssh/id_rsa.public | pbcopy'
 alias sail='./vendor/bin/sail'
-alias tunnel='valet share -subdomain=freekmurze -region=eu'
-
-# JavaScript
-alias jest="./node_modules/.bin/jest"
 
 # Git
 alias gc="git checkout"
-alias gpo="git push origin"
+alias gpo="git push -u origin"
+alias qgpo="git add . && git commit -m quick && git push origin master"
 alias gm="git merge"
+alias prod="git push production"
+alias qprod="git add . && git commit -m hotfix && prod"
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
-
-# Fast open
-alias o="open ."
 
 # List all files colorized in long format
 alias l="ls -laF"
 
-# PhpStorm
-alias phpstorm='open -a /Applications/PhpStorm.app "`pwd`"'
-
-# PHP
-alias switch-php80="brew unlink php@7.4 && brew link --overwrite --force php"
-alias switch-php74="brew unlink php && brew link --overwrite --force php@7.4"
-
 # Redis
 alias flush-redis="redis-cli FLUSHALL"
 
-# VSCode
-alias code='open -a "/Applications/Visual Studio Code.app" "`pwd`"'
-
-# Show/hide hidden files in Finder
-alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
-alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
-
-# IP addresses
-alias ip="curl https://diagnostic.opendns.com/myip ; echo"
-alias localip="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
-
-# Flush Directory Service cache
-alias flushdns="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
-
-# Lock the screen
-alias afk="osascript -e 'tell application \"System Events\" to keystroke \"q\" using {command down,control down}'"
-
-# Empty the Trash on all mounted volumes and the main HDD
-# Also, clear Apple’s System Logs to improve shell startup speed
-alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl"
-
-# Enable aliases to be sudo’ed
-alias sudo='sudo '
-
-# Scape webpage
-alias scrape="scrapeUrl"
-
-# Switch NPM
-alias npmnpm="npm config set registry https://registry.npmjs.org"
-alias npmspatie="npm config set registry https://npm.spatie.be"
-
-# Restart touch bar
-alias touchbar="killall ControlStrip"
+alias czsh="source ~/.zshrc"
+alias .alias="nano ~/.dotfiles/shell/.aliases"
