@@ -19,11 +19,12 @@ alias sail='./vendor/bin/sail'
 # Git
 alias gc="git checkout"
 alias gpo="git push -u origin"
-alias qgpo="git add . && git commit -m quick && git push origin master"
+alias qgpo="git add -A && git commit -m quick && git push origin master"
 alias gm="git merge"
 alias prod="git push production"
-alias qprod="git add . && git commit -m hotfix && prod"
+alias qprod="git add -A && git commit -m hotfix && prod"
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+alias gpull="git pull origin master"
 
 # List all files colorized in long format
 alias l="ls -laF"

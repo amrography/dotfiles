@@ -18,6 +18,7 @@ DEFAULT_USER=`whoami`
 plugins=(
 git
 composer
+#zsh-completions
 zsh-autosuggestions
 zsh-syntax-highlighting
 )
