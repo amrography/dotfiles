@@ -42,6 +42,8 @@ echo '----------------'
 echo install homebrew
 sudo rm -rf /usr/local/Cellar /usr/local/.git && brew cleanup
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/freek/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.dotfiles/misc/oh-my-zsh-custom/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/.dotfiles/misc/oh-my-zsh-custom/plugins/zsh-syntax-highlighting
