@@ -57,7 +57,7 @@ echo 'nano colorfull'
 curl https://raw.githubusercontent.com/scopatz/nanorc/master/install.sh | sh
 echo 'Install wget'
 echo '------------'
-brew install wget --overwrite
+brew install wget
 
 echo 'Install httpie'
 echo '--------------'
@@ -79,14 +79,10 @@ echo 'Install doctl'
 echo '-------------'
 brew install doctl
 
-echo 'Install brew-cask'
-echo '-----------------'
-brew tap caskroom/cask
-brew install brew-cask
 
 echo 'Install some nice quicklook plugins'
 echo '-----------------------------------'
-brew cask install --force qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzip webp-quicklook suspicious-package
+brew install --cask qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzip  suspicious-package
 
 echo 'Install php'
 echo '-----------'
