@@ -37,6 +37,57 @@ echo '-------------'
 mkdir "${HOME}/.npm-packages"
 npm config set prefix "${HOME}/.npm-packages"
 
+echo 'Install homebrew'
+echo '----------------'
+echo install homebrew
+sudo rm -rf /usr/local/Cellar /usr/local/.git && brew cleanup
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+
+git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.dotfiles/misc/oh-my-zsh-custom/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/.dotfiles/misc/oh-my-zsh-custom/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-completions $HOME/.dotfiles/misc/oh-my-zsh-custom/plugins/zsh-completions
+
+echo 'nano colorfull'
+
+curl https://raw.githubusercontent.com/scopatz/nanorc/master/install.sh | sh
+echo 'Install wget'
+echo '------------'
+brew install wget --overwrite
+
+echo 'Install httpie'
+echo '--------------'
+brew install httpie
+
+echo 'Install ncdu'
+echo '------------'
+brew install ncdu
+
+echo 'Install hub'
+echo '-----------'
+brew install hub
+
+echo 'Install ack'
+echo '-----------'
+brew install ack
+
+echo 'Install doctl'
+echo '-------------'
+brew install doctl
+
+echo 'Install brew-cask'
+echo '-----------------'
+brew tap caskroom/cask
+brew install brew-cask
+
+echo 'Install some nice quicklook plugins'
+echo '-----------------------------------'
+brew cask install --force qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzip webp-quicklook suspicious-package
+
+echo 'Install php'
+echo '-----------'
+brew install php@7.4
+brew install php@8.0
+
 echo 'Install composer'
 echo '----------------'
 EXPECTED_COMPOSER_CHECKSUM="$(curl https://composer.github.io/installer.sig)"
@@ -52,15 +103,63 @@ php composer-setup.php
 rm composer-setup.php
 mv composer.phar /usr/local/bin/composer
 
-echo 'install zsh plugins'
+echo 'Install imagemagick'
+echo '-------------------'
+brew install imagemagick
 
-git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.dotfiles/misc/oh-my-zsh-custom/plugins/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/.dotfiles/misc/oh-my-zsh-custom/plugins/zsh-syntax-highlighting
-git clone https://github.com/zsh-users/zsh-completions $HOME/.dotfiles/misc/oh-my-zsh-custom/plugins/zsh-completions
+echo 'Install imagick'
+echo '---------------'
+pecl install imagick
 
-echo 'nano colorfull'
+echo 'Install memcached'
+echo '-----------------'
+pecl install memcached
 
-curl https://raw.githubusercontent.com/scopatz/nanorc/master/install.sh | sh
+echo 'Install xdebug'
+echo '--------------'
+pecl install xdebug
+
+echo 'Install redis'
+echo '-------------'
+pecl install redis
+
+echo 'Install laravel envoy'
+echo '---------------------'
+composer global require "laravel/envoy=~2.0"
+
+echo 'Install phpunit-watcher'
+echo '-----------------------'
+composer global require spatie/phpunit-watcher
+
+echo 'Install mixed-content-scanner-cli'
+echo '---------------------------------'
+composer global require spatie/mixed-content-scanner-cli
+
+echo 'Install laravel valet'
+echo '---------------------'
+composer global require laravel/valet
+valet install
+
+echo 'Install mysql'
+echo '-------------'
+brew install mysql
+brew services start mysql
+
+echo 'Install yarn'
+echo '------------'
+brew install yarn
+
+echo 'Install ghostscript'
+echo '-------------------'
+brew install ghostscript
+
+echo 'Install mackup'
+echo '--------------'
+brew install mackup
+
+echo 'Install zsh-autosuggestions'
+echo '---------------------------'
+brew install zsh-autosuggestions
 
 echo '++++++++++++++++++++++++++++++'
 echo '++++++++++++++++++++++++++++++'
