@@ -21,6 +21,7 @@ composer
 #zsh-completions
 zsh-autosuggestions
 zsh-syntax-highlighting
+macos
 )
 
 source $ZSH/oh-my-zsh.sh
