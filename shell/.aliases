@@ -1,4 +1,6 @@
 # PHP
+alias phpunit="vendor/bin/phpunit"
+alias phpunitw="phpunit-watcher watch"
 alias a="php artisan"
 alias ar="php artisan remote"
 alias c="composer"
@@ -9,9 +11,8 @@ alias cda="composer dump-autoload -o"
 alias larastan="vendor/bin/phpstan analyse"
 alias mfs='php artisan migrate:fresh --seed'
 alias nah='git reset --hard;git clean -df'
-alias p="phpunit"
+
 alias pp="php artisan test --parallel"
-alias pf="phpunit --filter "
 alias d="php artisan dusk"
 alias sshconfig="vi ~/.ssh/config"
 alias sail='./vendor/bin/sail'
