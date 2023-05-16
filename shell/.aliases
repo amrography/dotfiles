@@ -18,13 +18,15 @@ alias mfs='php artisan migrate:fresh --seed'
 alias nah='git reset --hard;git clean -df'
 alias testbench="vendor/bin/testbench"
 alias p="c test"
-alias pf="phpunit --filter"
+alias pf="./vendor/bin/phpunit --filter"
 alias d="php artisan dusk"
 alias sshconfig="nano ~/.ssh/config"
 alias sail='./vendor/bin/sail'
 # alias tunnel='valet share -subdomain=freekmurze -region=eu'
 alias canvas='composer exec canvas '
 alias php_cs='code ~/.vscode/.php-cs-fixer.php'
+alias php7="brew unlink php && brew link php@7.4"
+alias php8="brew unlink php@7.4 && brew link php"
 
 # JavaScript
 alias jest="./node_modules/.bin/jest"
@@ -66,6 +68,7 @@ alias npmnpm="npm config set registry https://registry.npmjs.org"
 
 alias czsh="source ~/.zshrc"
 alias .alias="nano ~/.dotfiles/shell/.aliases"
+alias .aliasc="code ~/.dotfiles/shell/.aliases"
 alias www="cd ~/Code"
 
 alias flushDNS="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
@@ -79,3 +82,9 @@ alias zipalign="/Users/akhaled/Library/Android/sdk/build-tools/31.0.0/zipalign -
 
 # Brew
 alias brew-apps="brew leaves | xargs -n1 brew desc"
+
+# JAVA
+alias java8="rm /usr/local/bin/javac && ln -s /Users/amrokhaled/Library/Java/JavaVirtualMachines/liberica-1.8.0_345/bin/javac /usr/local/bin/javac && czsh"
+alias java11="rm /usr/local/bin/javac && ln -s /Users/amrokhaled/Library/Java/JavaVirtualMachines/corretto-11.0.17/Contents/Home/bin/javac /usr/local/bin/javac && czsh"
+alias java15="rm /usr/local/bin/javac && ln -s /Library/Java/JavaVirtualMachines/jdk-15.0.2.jdk/Contents/Home/bin/javac /usr/local/bin/javac && czsh"
+alias java17="rm /usr/local/bin/javac && ln -s "/Applications/Android Studio Preview.app/Contents/jbr/Contents/Home/bin/javac" /usr/local/bin/javac && czsh"

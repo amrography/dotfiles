@@ -24,33 +24,12 @@ composer
 zsh-autosuggestions
 zsh-syntax-highlighting
 macos
+artisan
 )
 
 source $ZSH/oh-my-zsh.sh
 
 export PATH=Users/$DEFAULT_USER/.rvm/gems/ruby-2.1.2/bin:$PATH
-#set numeric keys
-# 0 . Enter
-bindkey -s "^[Op" "0"
-bindkey -s "^[Ol" "."
-bindkey -s "^[OM" "^M"
-# 1 2 3
-bindkey -s "^[Oq" "1"
-bindkey -s "^[Or" "2"
-bindkey -s "^[Os" "3"
-# 4 5 6
-bindkey -s "^[Ot" "4"
-bindkey -s "^[Ou" "5"
-bindkey -s "^[Ov" "6"
-# 7 8 9
-bindkey -s "^[Ow" "7"
-bindkey -s "^[Ox" "8"
-bindkey -s "^[Oy" "9"
-# + -  * /
-bindkey -s "^[Ok" "+"
-bindkey -s "^[Om" "-"
-bindkey -s "^[Oj" "*"
-bindkey -s "^[Oo" "/"
 
 # Load the shell dotfiles, and then some:
 # * ~/.dotfiles-custom can be used for other settings you don’t want to commit.
@@ -87,7 +66,21 @@ export PATH=/usr/local/bin:$PATH
 
 #ANDROID
 export PATH=/Users/amrokhaled/Library/Android/sdk/platform-tools:$PATH
+export ANDROID_SDK_ROOT=/Users/amrokhaled/Library/Android/sdk
+export ANDROID_STUDIO="/Applications/Android Studio Preview.app/Contents/MacOS"
+# export GRADLE_PATH="/Users/amrokhaled/.gradle/wrapper/dists/gradle-7.4-bin/c0gwcg53nkjbqw7r0h0umtfvt/gradle-7.4/bin"
+# export PATH="$PATH:$GRADLE_PATH:$ANDROID_STUDIO"
 
+# export JAVA_HOME=/Users/amrokhaled/Library/Java/JavaVirtualMachines/liberica-1.8.0_345
+# export PATH=/Users/amrokhaled/Library/Java/JavaVirtualMachines/liberica-1.8.0_345/bin/javac:$PATH
+
+# export JAVA_HOME=/Users/amrokhaled/Library/Java/JavaVirtualMachines/corretto-11.0.17/Contents/Home
+# export PATH=/Users/amrokhaled/Library/Java/JavaVirtualMachines/corretto-11.0.17/Contents/Home/bin/javac:$PATH
+
+export PATH=$PATH:$ANDROID_SDK_ROOT/tools/bin
+export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
+export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
+export CAPACITOR_ANDROID_STUDIO_PATH="/Applications/Android Studio Preview.app"
 
 export NVM_DIR="$HOME/.nvm"
   [ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
@@ -95,3 +88,5 @@ export NVM_DIR="$HOME/.nvm"
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
+#export PATH="/usr/local/opt/php@7.4/bin:$PATH"
+#export PATH="/usr/local/opt/php@7.4/sbin:$PATH"
