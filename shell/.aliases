@@ -18,7 +18,7 @@ alias mfs='php artisan migrate:fresh --seed'
 alias nah='git reset --hard;git clean -df'
 alias testbench="vendor/bin/testbench"
 alias p="c test"
-alias pf="./vendor/bin/phpunit --filter"
+alias pf="php artisan test --filter="
 alias d="php artisan dusk"
 alias sshconfig="nano ~/.ssh/config"
 alias sail='./vendor/bin/sail'
@@ -88,3 +88,5 @@ alias java8="rm /usr/local/bin/javac && ln -s /Users/amrokhaled/Library/Java/Jav
 alias java11="rm /usr/local/bin/javac && ln -s /Users/amrokhaled/Library/Java/JavaVirtualMachines/corretto-11.0.17/Contents/Home/bin/javac /usr/local/bin/javac && czsh"
 alias java15="rm /usr/local/bin/javac && ln -s /Library/Java/JavaVirtualMachines/jdk-15.0.2.jdk/Contents/Home/bin/javac /usr/local/bin/javac && czsh"
 alias java17="rm /usr/local/bin/javac && ln -s "/Applications/Android Studio Preview.app/Contents/jbr/Contents/Home/bin/javac" /usr/local/bin/javac && czsh"
+
+alias 2fa="bash /Users/amrokhaled/Code/scripts/2fa"

@@ -18,9 +18,11 @@ DEFAULT_USER=`whoami`
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(
+dex
 git
 composer
-#zsh-completions
+zsh-select
+zsh-completions
 zsh-autosuggestions
 zsh-syntax-highlighting
 macos
@@ -81,12 +83,15 @@ export PATH=$PATH:$ANDROID_SDK_ROOT/tools/bin
 export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
 export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
 export CAPACITOR_ANDROID_STUDIO_PATH="/Applications/Android Studio Preview.app"
+export PATH=$PATH:/usr/local/opt/rabbitmq/sbin
 
 export NVM_DIR="$HOME/.nvm"
   [ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
   [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"
 
-# Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
 #export PATH="/usr/local/opt/php@7.4/bin:$PATH"
 #export PATH="/usr/local/opt/php@7.4/sbin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
+
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
