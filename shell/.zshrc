@@ -85,13 +85,14 @@ export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
 export CAPACITOR_ANDROID_STUDIO_PATH="/Applications/Android Studio Preview.app"
 export PATH=$PATH:/usr/local/opt/rabbitmq/sbin
 
-export NVM_DIR="$HOME/.nvm"
-  [ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-  [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"
-
 #export PATH="/usr/local/opt/php@7.4/bin:$PATH"
 #export PATH="/usr/local/opt/php@7.4/sbin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
+
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
