@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Hide "last login" line when starting a new terminal session
-# touch $HOME/.hushlogin
+touch $HOME/.hushlogin
 
 # Install zsh
 echo 'Install oh-my-zsh'
@@ -23,6 +23,9 @@ ln -s $HOME/.dotfiles/shell/.vimrc $HOME/.vimrc
 rm $HOME/.vim
 ln -s $HOME/.dotfiles/shell/.vim $HOME/.vim
 
+# Symlink the Mackup config
+ln -s $HOME/.dotfiles/macos/.mackup.cfg $HOME/.mackup.cfg
+
 # Fix missing font characters (see https://github.com/robbyrussell/oh-my-zsh/issues/1906)
 cd ~/.oh-my-zsh/themes/
 git checkout d6a36b1 agnoster.zsh-theme
@@ -37,27 +40,38 @@ echo '-------------'
 mkdir "${HOME}/.npm-packages"
 npm config set prefix "${HOME}/.npm-packages"
 
+echo 'Install composer'
+echo '----------------'
+EXPECTED_COMPOSER_CHECKSUM="$(curl https://composer.github.io/installer.sig)"
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+ACTUAL_COMPOSER_CHECKSUM="$(php -r "echo hash_file('sha384', 'composer-setup.php');")"
+if [ "$EXPECTED_COMPOSER_CHECKSUM" != "$ACTUAL_COMPOSER_CHECKSUM" ]
+then
+    >&2 echo 'ERROR: Invalid installer checksum'
+    rm composer-setup.php
+    exit 1
+fi
+php composer-setup.php
+rm composer-setup.php
+mv composer.phar /usr/local/bin/composer
+
 echo 'Install homebrew'
 echo '----------------'
 echo install homebrew
 sudo rm -rf /usr/local/Cellar /usr/local/.git && brew cleanup
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/freek/.zprofile
-eval "$(/opt/homebrew/bin/brew shellenv)"
 
-git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.dotfiles/misc/oh-my-zsh-custom/plugins/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/.dotfiles/misc/oh-my-zsh-custom/plugins/zsh-syntax-highlighting
-git clone https://github.com/zsh-users/zsh-completions $HOME/.dotfiles/misc/oh-my-zsh-custom/plugins/zsh-completions
 echo 'Install node'
 echo '------------'
-brew install node
+brew install node@8
 
-echo 'nano colorfull'
+echo 'Install pkg-config'
+echo '------------------'
+brew install pkg-config
 
-curl https://raw.githubusercontent.com/scopatz/nanorc/master/install.sh | sh
 echo 'Install wget'
 echo '------------'
-brew install wget
+brew install wget --overwrite
 
 echo 'Install httpie'
 echo '--------------'
@@ -79,35 +93,20 @@ echo 'Install doctl'
 echo '-------------'
 brew install doctl
 
-echo 'Install git secret'
-echo '------------------'
-brew install git-secret
+echo 'Install brew-cask'
+echo '-----------------'
+brew tap caskroom/cask
+brew install brew-cask
 
 echo 'Install some nice quicklook plugins'
 echo '-----------------------------------'
-brew install --cask qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzip  suspicious-package
+brew cask install --force qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzip webp-quicklook suspicious-package
 
 echo 'Install php'
 echo '-----------'
-brew tap shivammathur/php
-brew install shivammathur/php/php@8.1
-brew link --overwrite --force php@8.1
+brew install php@7.4
+brew install php@8.0
 
-echo 'Install composer'
-echo '----------------'
-EXPECTED_COMPOSER_CHECKSUM="$(curl https://composer.github.io/installer.sig)"
-php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
-ACTUAL_COMPOSER_CHECKSUM="$(php -r "echo hash_file('sha384', 'composer-setup.php');")"
-if [ "$EXPECTED_COMPOSER_CHECKSUM" != "$ACTUAL_COMPOSER_CHECKSUM" ]
-then
-    >&2 echo 'ERROR: Invalid installer checksum'
-    rm composer-setup.php
-    exit 1
-fi
-php composer-setup.php
-rm composer-setup.php
-sudo mkdir /usr/local/bin/
-sudo mv composer.phar /usr/local/bin/composer
 
 echo 'Install imagemagick'
 echo '-------------------'
@@ -136,6 +135,10 @@ composer global require "laravel/envoy=~2.0"
 echo 'Install phpunit-watcher'
 echo '-----------------------'
 composer global require spatie/phpunit-watcher
+
+echo 'Install mixed-content-scanner-cli'
+echo '---------------------------------'
+composer global require spatie/mixed-content-scanner-cli
 
 echo 'Install laravel valet'
 echo '---------------------'
@@ -173,7 +176,9 @@ echo '2. Install patched solarized theme included in ~/.dotfiles/misc'
 echo '++++++++++++++++++++++++++++++'
 echo 'Some optional tidbits'
 
-echo '1. Set some sensible os x defaults by running: $HOME/.dotfiles/macos/set-defaults.sh'
+echo '1. Make sure dropbox is running first. If you have not backed up via Mackup yet, then run `mackup backup` to symlink preferences for a wide collection of apps to your dropbox. If you already had a backup via mackup run `mackup restore` You'\''ll find more info on Mackup here: https://github.com/lra/mackup.'
+echo '2. Set some sensible os x defaults by running: $HOME/.dotfiles/macos/set-defaults.sh'
+echo '3. Make a .dotfiles-custom/shell/.aliases for your personal commands'
 
 echo '++++++++++++++++++++++++++++++'
 echo '++++++++++++++++++++++++++++++'

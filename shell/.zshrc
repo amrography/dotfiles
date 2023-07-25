@@ -1,6 +1,5 @@
 # Fig pre block. Keep at the top of this file.
 [[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
-
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
@@ -20,6 +19,7 @@ DEFAULT_USER=`whoami`
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(
 dex
+fig
 git
 composer
 zsh-select
@@ -27,7 +27,6 @@ zsh-completions
 zsh-autosuggestions
 zsh-syntax-highlighting
 macos
-artisan
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -39,6 +38,10 @@ export PATH=Users/$DEFAULT_USER/.rvm/gems/ruby-2.1.2/bin:$PATH
 for file in ~/.dotfiles/shell/.{exports,aliases,functions}; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file"
 done
+
+for file in ~/.dotfiles-custom/shell/.{exports,aliases,functions,zshrc}; do
+	[ -r "$file" ] && [ -f "$file" ] && source "$file"
+done
 unset file
 
 # Load rvm
@@ -46,6 +49,9 @@ unset file
 
 export PATH="$PATH:$HOME/.rvm/bin"
 . $HOME/.dotfiles/shell/z.sh
+
+# Alias hub to git
+eval "$(hub alias -s)"
 
 # Sudoless npm https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md
 NPM_PACKAGES="${HOME}/.npm-packages"
@@ -60,12 +66,27 @@ export PATH=$HOME/.dotfiles/bin:$PATH
 # Import ssh keys in keychain
 ssh-add -A 2>/dev/null;
 
+# Setup xdebug
+export XDEBUG_CONFIG="idekey=VSCODE"
+
 # Enable autosuggestions
-# source ~/.oh-my-zsh-custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.dotfiles/misc/oh-my-zsh-custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
 
 # Extra paths
 export PATH="$HOME/.composer/vendor/bin:$PATH"
 export PATH=/usr/local/bin:$PATH
+export PATH="$HOME/.yarn/bin:$PATH"
+export PATH="/usr/local/opt/mysql@8.0/bin:$PATH"
+export PATH="/usr/local/opt/node@8/bin:$PATH"
+
+export PATH="/usr/local/opt/node@12/bin:$PATH"
+export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+export GPG_TTY=$(tty)
+export PATH="/usr/local/opt/ncurses/bin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
+export PATH="/usr/local/opt/ncurses/bin:$PATH"
 
 #ANDROID
 export PATH=/Users/amrokhaled/Library/Android/sdk/platform-tools:$PATH
@@ -89,6 +110,18 @@ export PATH=$PATH:/usr/local/opt/rabbitmq/sbin
 #export PATH="/usr/local/opt/php@7.4/bin:$PATH"
 #export PATH="/usr/local/opt/php@7.4/sbin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# ANDROID SDK
+export ANDROID_HOME=/Users/akhaled/Library/Android/sdk
+export JAVA_HOME=`/usr/libexec/java_home -v 15.0.2`
+export PATH=/Users/$USER/Library/Android/sdk/tools:$PATH
+export PATH=/Users/$USER/Library/Android/sdk/tools/bin:$PATH
+export PATH=/Users/$USER/Library/Android/sdk/platform-tools:$PATH
+export PATH=/usr/local/bin/php:$PATH
+export PHP_CS_FIXER_IGNORE_ENV=1
 
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm

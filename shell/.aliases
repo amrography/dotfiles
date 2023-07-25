@@ -53,7 +53,8 @@ alias flush-redis="redis-cli FLUSHALL"
 alias code='open -a "/Applications/Visual Studio Code.app"'
 
 # IP addresses
-alias ip="curl https://ipinfo.io/ip ; echo"
+alias ip2="curl https://ipinfo.io/ip ; echo"
+alias ip="curl https://diagnostic.opendns.com/myip ; echo"
 alias localip="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
 
 # Lock the screen
@@ -70,6 +71,8 @@ alias czsh="source ~/.zshrc"
 alias .alias="nano ~/.dotfiles/shell/.aliases"
 alias .aliasc="code ~/.dotfiles/shell/.aliases"
 alias www="cd ~/Code"
+alias 250gb="cd /Volumes/250GB/Code"
+alias 1tb="cd /Volumes/1TB/Code"
 
 alias flushDNS="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
 
