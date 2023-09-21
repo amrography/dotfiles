@@ -19,14 +19,13 @@ alias nah='git reset --hard;git clean -df'
 alias testbench="vendor/bin/testbench"
 alias p="c test"
 alias pf="php artisan test --filter="
-alias d="php artisan dusk"
 alias sshconfig="nano ~/.ssh/config"
 alias sail='./vendor/bin/sail'
 # alias tunnel='valet share -subdomain=freekmurze -region=eu'
 alias canvas='composer exec canvas '
-alias php_cs='code ~/.vscode/.php-cs-fixer.php'
 alias php7="brew unlink php && brew link php@7.4"
 alias php8="brew unlink php@7.4 && brew link php"
+alias phpcs="./vendor/bin/phpcs app tests -v"
 
 # JavaScript
 alias jest="./node_modules/.bin/jest"
