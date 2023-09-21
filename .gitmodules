@@ -3,4 +3,4 @@
 	url = https://github.com/jessarcher/zsh-artisan.git
 [submodule "misc/oh-my-zsh-custom/plugins/zsh-nvm"]
 	path = misc/oh-my-zsh-custom/plugins/zsh-nvm
-	url = https://github.com/jessarcher/zsh-artisan.git
+	url = https://github.com/lukechilds/zsh-nvm.git
