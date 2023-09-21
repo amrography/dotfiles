@@ -25,3 +25,9 @@ export GREP_OPTIONS="--color=auto"
 
 # Do not auto update brew
 export HOMEBREW_NO_AUTO_UPDATE=1
+
+#ARTISAN_OPEN_ON_MAKE_EDITOR=vim
+#ARTISAN_OPEN_ON_MAKE_EDITOR=subl   # Sublime Text
+#ARTISAN_OPEN_ON_MAKE_EDITOR=pstorm # PHPStorm
+#ARTISAN_OPEN_ON_MAKE_EDITOR=atom   # Atom (May require shell commands to be enabled)
+ARTISAN_OPEN_ON_MAKE_EDITOR=code   # VSCode (May require shell commands to be enabled)
