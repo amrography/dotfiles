@@ -45,8 +45,6 @@ echo '----------------'
 echo install homebrew
 sudo rm -rf /usr/local/Cellar /usr/local/.git && brew cleanup
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> $HOME/.zprofile
-eval "$(/opt/homebrew/bin/brew shellenv)"
 
 echo 'Install node'
 echo '------------'
@@ -88,12 +86,6 @@ echo 'Install some nice quicklook plugins'
 echo '-----------------------------------'
 brew install --cask qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzip  suspicious-package
 
-echo 'Install php'
-echo '-----------'
-brew tap shivammathur/php
-brew install shivammathur/php/php@8.1
-brew link --overwrite --force php@8.1
-
 echo 'Install composer'
 echo '----------------'
 EXPECTED_COMPOSER_CHECKSUM="$(curl https://composer.github.io/installer.sig)"
@@ -109,10 +101,6 @@ php composer-setup.php
 rm composer-setup.php
 sudo mkdir /usr/local/bin/
 sudo mv composer.phar /usr/local/bin/composer
-
-echo 'Install aicommits'
-echo '-----------------'
-npm install -g aicommits
 
 echo 'Install imagemagick'
 echo '-------------------'
@@ -141,11 +129,6 @@ composer global require "laravel/envoy=~2.0"
 echo 'Install phpunit-watcher'
 echo '-----------------------'
 composer global require spatie/phpunit-watcher
-
-echo 'Install laravel valet'
-echo '---------------------'
-composer global require laravel/valet
-valet install
 
 echo 'Install mysql'
 echo '-------------'
