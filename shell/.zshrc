@@ -18,11 +18,9 @@ DEFAULT_USER=`whoami`
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(
-dex
 fig
 git
 composer
-zsh-select
 zsh-completions
 zsh-autosuggestions
 zsh-syntax-highlighting
@@ -83,15 +81,6 @@ export PATH="/usr/local/opt/node@8/bin:$PATH"
 export PATH="/usr/local/opt/node@12/bin:$PATH"
 export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-
-#copilot
-eval "$(github-copilot-cli alias -- "$0")"
-
-# fnm
-export PATH="/Users/freek/Library/Application Support/fnm:$PATH"
-eval "`fnm env`"
-
-eval "$(fnm env --use-on-cd)"
 
 # do not update all homebrew stuff automatically
 export HOMEBREW_NO_AUTO_UPDATE=1
