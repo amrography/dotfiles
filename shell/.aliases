@@ -1,5 +1,5 @@
 # PHP
-alias a="php artisan"
+alias a="artisan"
 alias ar="php artisan remote"
 alias c="composer"
 alias cu="composer update"
