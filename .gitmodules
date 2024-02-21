@@ -4,3 +4,15 @@
 [submodule "misc/oh-my-zsh-custom/plugins/zsh-nvm"]
 	path = misc/oh-my-zsh-custom/plugins/zsh-nvm
 	url = https://github.com/lukechilds/zsh-nvm.git
+[submodule "misc/oh-my-zsh-custom/plugins/fzf-tab"]
+	path = misc/oh-my-zsh-custom/plugins/fzf-tab
+	url = https://github.com/aloxaf/fzf-tab.git
+[submodule "shell/.vim/plugged/nerdtree"]
+	path = shell/.vim/plugged/nerdtree
+	url = https://github.com/preservim/nerdtree.git
+[submodule "shell/.vim/plugged/vim-airline"]
+	path = shell/.vim/plugged/vim-airline
+	url = https://github.com/vim-airline/vim-airline.git
+[submodule "shell/.vim/plugged/vim-airline-themes"]
+	path = shell/.vim/plugged/vim-airline-themes
+	url = https://github.com/vim-airline/vim-airline-themes.git
