@@ -1,6 +1,6 @@
 # PHP
-alias a="php artisan"
-alias ar="php artisan remote"
+alias a="DISABLE_ARTISAN_SAIL=true artisan"
+alias ar="a remote"
 alias c="composer"
 alias cu="composer update"
 alias cr="composer require"
@@ -14,11 +14,11 @@ alias cvda="cv dump-autoload"
 alias hostfile="sudo nano /etc/hosts"
 alias deploy='envoy run deploy'
 alias deploy-code='envoy run deploy-code'
-alias mfs='php artisan migrate:fresh --seed'
-alias nah='git reset --hard;git clean -df'
+alias mfs='a migrate:fresh --seed'
 alias testbench="vendor/bin/testbench"
-alias p="c test"
-alias pf="php artisan test --filter="
+# see .functions
+# alias p="c test"
+# alias pf="a test --filter="
 alias sshconfig="nano ~/.ssh/config"
 alias sail='./vendor/bin/sail'
 # alias tunnel='valet share -subdomain=freekmurze -region=eu'
@@ -38,6 +38,8 @@ alias gm="git merge"
 alias prod="git push production"
 alias qprod="git add -A && git commit -m hotfix && prod"
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+alias uncommit="git reset --soft HEAD~1"
+alias nah='git reset --hard;git clean -df'
 
 # Fast open
 alias o="open ."
@@ -52,10 +54,11 @@ alias flush-redis="redis-cli FLUSHALL"
 alias code='open -a "/Applications/Visual Studio Code.app"'
 
 # IP addresses
-alias ip2="curl https://ipinfo.io/ip ; echo"
 alias ip="curl https://diagnostic.opendns.com/myip ; echo"
+alias ip2="curl https://ipinfo.io/ip ; echo"
+alias ip3="curl ifconfig.me/ip ; echo"
 alias localip="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
-
+alias flushDNS="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
 # Lock the screen
 alias afk="/System/Library/CoreServices/Menu\
 Extras/User.menu/Contents/Resources/CGSession -suspend"
@@ -72,8 +75,6 @@ alias .aliasc="code ~/.dotfiles/shell/.aliases"
 alias www="cd ~/Code"
 alias 250gb="cd /Volumes/250GB/Code"
 alias 1tb="cd /Volumes/1TB/Code"
-
-alias flushDNS="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
 
 alias sshp="ssh -o PreferredAuthentications=password -o PubkeyAuthentication=no"
 

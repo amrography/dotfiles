@@ -56,7 +56,7 @@ set title
 "-------- Auto commands -------"
 "automatically source the Vimrc file on save.
 augroup autosourcing
-   autocmd! 
+   autocmd!
    autocmd BufWritePost .vimrc source %
 augroup END
 

@@ -1,3 +1,20 @@
+# Run tests
+function p() {
+   if [ -f vendor/bin/pest ]; then
+      vendor/bin/pest "$@"
+   else
+      vendor/bin/phpunit "$@"
+   fi
+}
+
+function pf() {
+   if [ -f vendor/bin/pest ]; then
+      vendor/bin/pest --filter "$@"
+   else
+      vendor/bin/phpunit --filter "$@"
+   fi
+}
+
 # Docker
 function ssh-docker() {
    docker exec -it "$@" bash
@@ -55,13 +72,8 @@ function removehost() {
 }
 
 function weather() {
-   city="$1"
-
-   if [ -z "$city" ]; then
-      city="Antwerp"
-   fi
-
-   eval "curl http://wttr.in/${city}"
+   local city="${1:-Cairo}"
+   curl http://wttr.in/${city// /+}\?F
 }
 
 alias mysqladm='mysql -u root'
@@ -77,14 +89,15 @@ function rector() {
 
 #  Commit everything
 function commit() {
-  commitMessage="$1"
+   commitMessage="$*"
 
-  if [ "$commitMessage" = "" ]; then
-     commitMessage="wip"
-  fi
+   git add .
 
-  git add .
-  eval "git commit -a -m '${commitMessage}'"
+   if [ "$commitMessage" = "" ]; then
+      commitMessage="wip"
+   fi
+
+   eval "git commit -a -m '${commitMessage}'"
 }
 
 xdebug() {
@@ -140,4 +153,9 @@ function scheduler () {
 
 function silent() {
    "$@" >& /dev/null
+}
+
+function browse() {
+  url="https://$(basename "$(pwd)").test"
+  open "$url"
 }
