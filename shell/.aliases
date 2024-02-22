@@ -1,6 +1,6 @@
 # PHP
-alias a="artisan"
-alias ar="php artisan remote"
+alias a="DISABLE_ARTISAN_SAIL=true artisan"
+alias ar="a remote"
 alias c="composer"
 alias cu="composer update"
 alias cr="composer require"
@@ -14,11 +14,11 @@ alias cvda="cv dump-autoload"
 alias hostfile="sudo nano /etc/hosts"
 alias deploy='envoy run deploy'
 alias deploy-code='envoy run deploy-code'
-alias mfs='php artisan migrate:fresh --seed'
+alias mfs='a migrate:fresh --seed'
 alias testbench="vendor/bin/testbench"
 # see .functions
 # alias p="c test"
-# alias pf="php artisan test --filter="
+# alias pf="a test --filter="
 alias sshconfig="nano ~/.ssh/config"
 alias sail='./vendor/bin/sail'
 # alias tunnel='valet share -subdomain=freekmurze -region=eu'
