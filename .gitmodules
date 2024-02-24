@@ -16,3 +16,6 @@
 [submodule "shell/.vim/plugged/vim-airline-themes"]
 	path = shell/.vim/plugged/vim-airline-themes
 	url = https://github.com/vim-airline/vim-airline-themes.git
+[submodule "misc/oh-my-zsh-custom/plugins/fzf-yarn"]
+	path = misc/oh-my-zsh-custom/plugins/fzf-yarn
+	url = https://github.com/pierpo/fzf-yarn

@@ -25,6 +25,7 @@ zsh-syntax-highlighting
 zsh-nvm
 macos
 fzf-tab
+fzf-yarn
 )
 
 source $ZSH/oh-my-zsh.sh
