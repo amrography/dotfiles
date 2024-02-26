@@ -25,3 +25,10 @@ Feel free to create an issue on this repo if you have any questions about them.
 ```sh
 git pull --recurse-submodules
 ```
+
+## Download font
+
+```sh
+curl -OL https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraCode.tar.xz
+tar -xvf FiraCode.tar.xz
+```
