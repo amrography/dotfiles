@@ -19,3 +19,6 @@
 [submodule "misc/oh-my-zsh-custom/plugins/fzf-yarn"]
 	path = misc/oh-my-zsh-custom/plugins/fzf-yarn
 	url = https://github.com/pierpo/fzf-yarn
+[submodule "shell/.vim/bundle/Vundle.vim"]
+	path = shell/.vim/bundle/Vundle.vim
+	url = https://github.com/VundleVim/Vundle.vim.git
