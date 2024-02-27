@@ -13,3 +13,18 @@
 [submodule "shell/.vim/vim-plug"]
 	path = shell/.vim/vim-plug
 	url = https://github.com/junegunn/vim-plug
+[submodule "shell/.vim/plugged/nerdtree"]
+	path = shell/.vim/plugged/nerdtree
+	url = https://github.com/preservim/nerdtree.git
+[submodule "shell/.vim/plugged/vim-airline"]
+	path = shell/.vim/plugged/vim-airline
+	url = https://github.com/vim-airline/vim-airline.git
+[submodule "shell/.vim/plugged/vim-airline-themes"]
+	path = shell/.vim/plugged/vim-airline-themes
+	url = https://github.com/vim-airline/vim-airline-themes.git
+[submodule "shell/.vim/plugged/vim-devicons"]
+	path = shell/.vim/plugged/vim-devicons
+	url = https://github.com/ryanoasis/vim-devicons.git
+[submodule "shell/.vim/plugged/vim-nerdtree-syntax-highlight"]
+	path = shell/.vim/plugged/vim-nerdtree-syntax-highlight
+	url = https://github.com/tiagofumo/vim-nerdtree-syntax-highlight.git
