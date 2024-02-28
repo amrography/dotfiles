@@ -10,4 +10,7 @@ Plug 'ryanoasis/vim-devicons'
 " Extra syntax and highlight for nerdtree files
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
+" Fuzzy file, buffer, mru, tag, etc finder.
+Plug 'kien/ctrlp.vim'
+
 call plug#end()
