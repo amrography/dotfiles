@@ -93,6 +93,9 @@ highlight CursorLine ctermfg=red
 let g:NERDTreeWinPos = "right"
 let g:NERDTreeDirArrowExpandable = '▶️'
 let g:NERDTreeDirArrowCollapsible = '🔻'
+let g:NERDTreeShowHidden=1
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
 
 " see https://github.com/ryanoasis/vim-devicons?tab=readme-ov-file#installation
 set encoding=UTF-8
