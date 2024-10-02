@@ -75,7 +75,7 @@ alias scrape="scrapeUrl"
 # Switch NPM
 alias npmnpm="npm config set registry https://registry.npmjs.org"
 
-alias czsh="source ~/.zshrc"
+alias czsh="exec $SHELL"
 alias .alias="nano ~/.dotfiles/shell/.aliases"
 alias .aliasc="code ~/.dotfiles/shell/.aliases"
 alias www="cd ~/Code"
