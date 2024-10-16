@@ -166,3 +166,11 @@ function fd() {
   preview="git diff $@ --color=always -- {-1}"
   git diff $@ --name-only | fzf -m --ansi --preview $preview
 }
+
+# Define a shell function to get package dependencies from PyPI
+get_pip_deps() {
+    package_name=$1  # The package name is passed as the first argument
+    url="https://pypi.org/pypi/${package_name}/json"
+    echo $url
+    curl -s $url | jq -r '.info.requires_dist[]'
+}
