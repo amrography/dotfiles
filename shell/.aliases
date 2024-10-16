@@ -7,9 +7,6 @@ alias cr="composer require"
 alias ci="composer install"
 alias cda="composer dump-autoload"
 alias cv="COMPOSER=composer-dev.json composer"
-alias cvu="cv update"
-alias cvr="cv require"
-alias cvi="cv install"
 alias cvda="cv dump-autoload"
 alias hostfile="sudo nano /etc/hosts"
 alias deploy='envoy run deploy'
@@ -99,3 +96,4 @@ alias java15="rm /usr/local/bin/javac && ln -s /Library/Java/JavaVirtualMachines
 alias java17="rm /usr/local/bin/javac && ln -s "/Applications/Android Studio Preview.app/Contents/jbr/Contents/Home/bin/javac" /usr/local/bin/javac && czsh"
 
 alias 2fa="bash /Users/amrokhaled/Code/scripts/2fa"
+alias gpass="LC_ALL=C tr -dc 'A-Za-z0-9!?%=' < /dev/urandom | head -c 16"

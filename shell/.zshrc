@@ -136,6 +136,8 @@ unset __conda_setup
 
 [ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh
 
+
+
 # Herd injected PHP binary.
 export PATH="$HOME/Library/Application Support/Herd/bin/":$PATH
 
@@ -147,3 +149,8 @@ export HERD_PHP_81_INI_SCAN_DIR="$HOME/Library/Application Support/Herd/config/p
 
 # Herd injected PHP 8.3 configuration.
 export HERD_PHP_83_INI_SCAN_DIR="$HOME/Library/Application Support/Herd/config/php/83/"
+
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
