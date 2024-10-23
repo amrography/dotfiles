@@ -28,3 +28,6 @@
 [submodule "shell/.vim/plugged/vim-nerdtree-syntax-highlight"]
 	path = shell/.vim/plugged/vim-nerdtree-syntax-highlight
 	url = https://github.com/tiagofumo/vim-nerdtree-syntax-highlight.git
+[submodule "misc/oh-my-zsh-custom/themes/headline"]
+	path = misc/oh-my-zsh-custom/themes/headline
+	url = https://github.com/moarram/headline.git

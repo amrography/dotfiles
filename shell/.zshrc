@@ -7,14 +7,15 @@ ZSH_CUSTOM=$HOME/.dotfiles/misc/oh-my-zsh-custom
 # Look in $HOME/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="agnoster"
+ZSH_THEME="headline"
+
+# ln -s $ZSH_CUSTOM/themes/headline/headline.zsh-theme $ZSH_CUSTOM/themes/headline.zsh-theme
 
 # Hide username in prompt
 DEFAULT_USER=`whoami`
 
 # Which plugins would you like to load? (plugins can be found in $HOME/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to $HOME/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(
 artisan
 git
@@ -28,6 +29,53 @@ fzf-tab
 )
 
 source $ZSH/oh-my-zsh.sh
+
+# START headline theme customization
+
+HL_SEP_MODE='on'
+HL_INFO_MODE='auto'
+HL_OVERWRITE='on'
+HL_SEP=(
+  _PRE  '╭' # consider '┌' or '╭'
+  _LINE '━' # consider '─'
+  _POST '╮' # consider '┐' or '╮'
+)
+HL_LAYOUT_STYLE="%{$light_black%}"
+HL_LAYOUT_TEMPLATE=(
+  _PRE    "│${IS_SSH+ %{$reset$faint%\}ssh}" # shows " ssh" if this is an SSH session
+  USER    ' ...'
+  HOST    " %{$reset$faint%}at%{$reset$HL_LAYOUT_STYLE%} ..."
+  VENV    " %{$reset$faint%}with%{$reset$HL_LAYOUT_STYLE%} ..."
+  PATH    " %{$reset$faint%}in%{$reset$HL_LAYOUT_STYLE%} ..."
+  _SPACER ''
+  BRANCH  " %{$reset$faint%}on%{$reset$HL_LAYOUT_STYLE%} ..."
+  STATUS  ' ...'
+  _POST   ' │'
+)
+HL_LAYOUT_FIRST=(
+  HOST    ' ...'
+  VENV    ' ...'
+  PATH    ' ...'
+  _SPACER ' '
+  BRANCH  ' ...'
+)
+HL_CONTENT_TEMPLATE=(
+  USER   "%{$bold$red%} ..."
+  HOST   "%{$bold$yellow%} ..."
+  VENV   "%{$bold$green%} ..."
+  PATH   "%{$bold$blue%} ..."
+  BRANCH "%{$bold$cyan%} ..."
+  STATUS "%{$bold$magenta%}..."
+)
+HL_GIT_SEP_SYMBOL=''
+HL_GIT_STATUS_SYMBOLS[CONFLICTS]="%{$red%}✘"
+HL_GIT_STATUS_SYMBOLS[CLEAN]="%{$green%}✔"
+HL_PROMPT="%{$HL_LAYOUT_STYLE%}╯ %{$reset%}$ "
+HL_CLOCK_MODE='on'
+HL_CLOCK_TEMPLATE="%{$faint%} ... %{$reset$HL_LAYOUT_STYLE%}╰"
+HL_ERR_MODE='on'
+
+# END headline them customiztion
 
 
 # Load the shell dotfiles, and then some:
