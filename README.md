@@ -32,3 +32,7 @@ git pull --recurse-submodules
 curl -OL https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraCode.tar.xz
 tar -xvf FiraCode.tar.xz
 ```
+
+https://github.com/ryanoasis/nerd-fonts/releases
+
+use Agave
