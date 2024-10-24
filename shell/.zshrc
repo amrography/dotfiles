@@ -19,13 +19,13 @@ DEFAULT_USER=`whoami`
 plugins=(
 artisan
 git
-composer
 zsh-completions
 zsh-autosuggestions
 zsh-syntax-highlighting
 zsh-nvm
 macos
 fzf-tab
+jsontools
 )
 
 source $ZSH/oh-my-zsh.sh
