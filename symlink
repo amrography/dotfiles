@@ -17,3 +17,7 @@ ln -s $HOME/.dotfiles/shell/.vim $HOME/.vim
 # Symlink the Mackup config
 rm $HOME/.mackup.cfg
 ln -s $HOME/.dotfiles/macos/.mackup.cfg $HOME/.mackup.cfg
+
+# Symlink omz theme
+rm $ZSH_CUSTOM/themes/headline.zsh-theme
+ln -s $ZSH_CUSTOM/themes/headline/headline.zsh-theme $ZSH_CUSTOM/themes/headline.zsh-theme
