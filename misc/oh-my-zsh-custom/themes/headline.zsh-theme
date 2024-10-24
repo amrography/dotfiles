@@ -1,1 +1,0 @@
-/Users/amrokhaled/.dotfiles/misc/oh-my-zsh-custom/themes/headline/headline.zsh-theme
